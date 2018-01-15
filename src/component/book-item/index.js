@@ -1,6 +1,9 @@
 import React from 'react';
 import * as util from '../../lib/util.js';
 
+import FontAwesomeIcon from '@fortawesome/react-fontawesome';
+import {faCheck, faTrash} from '@fortawesome/fontawesome-free-solid';
+
 class BookItem extends React.Component{
   constructor(props){
     super(props);
@@ -15,7 +18,7 @@ class BookItem extends React.Component{
           <div className='book-item'>
             <span> {title} by {author} </span>
             <button onClick={() => this.props.bookActions.readBook(this.props.data)}> mark as read </button>
-            <button onClick={() => this.props.bookActions.deleteBook(this.props.data)}> delete </button>
+            <button onClick={() => this.props.bookActions.deleteBook(this.props.data)}> <FontAwesomeIcon icon={faTrash}/> </button>
           </div>
         )}
         
